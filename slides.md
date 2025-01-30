@@ -467,3 +467,63 @@ kbd {
   color: #121212;
 }
 </style>
+
+---
+layout: center
+class: text-center
+---
+
+# Rive in Action: Smahjong Game UI
+
+<div class="w-full">
+  <img src="/images/example-tv.png" class="w-4/5 mx-auto" alt="Smahjong Game UI with Rive">
+</div>
+
+<div class="text-sm opacity-75 mt-4" v-click>
+Interactive game interface with real-time animations and state management
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Rive in Action: FigJam
+
+<div class="w-full">
+  <img src="/images/example-figjam.png" class="w-4/5 mx-auto" alt="FigJam with Rive Integration">
+</div>
+
+<div class="text-sm opacity-75 mt-4" v-click>
+Collaborative design tool powered by Rive animations
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Rive in Action: Interactive Learning
+
+<div class="w-full">
+  <img src="/images/example-duolingo.png" class="w-4/5 mx-auto" alt="Rive Editor Interface">
+</div>
+
+<div class="text-sm opacity-75 mt-4" v-click>
+Complex state machines and character animations in Rive editor
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Rive in Action: Notion Assistant
+
+<div class="w-full">
+  <img src="/images/example-notion.png" class="w-4/5 mx-auto" alt="Rive AI Integration Example">
+</div>
+
+<div class="text-sm opacity-75 mt-4" v-click>
+Smart interactions with AI-powered chat interfaces and dynamic animations
+</div>
