@@ -754,10 +754,10 @@
   resolved "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.28.tgz"
   integrity sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==
 
-"@rive-app/canvas@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@rive-app/canvas/-/canvas-1.1.9.tgz#39777c22e95ac2c4ce295e0a79c3230893cf74d7"
-  integrity sha512-PsHDCtte999FToHb6H1+0sU+DYZEDU8Ph6m1qZcIM8d5a9NQtH9ic71rFJvzeI4de5ET/kzj0V/JUaSo16DMrg==
+"@rive-app/canvas@2.25.7":
+  version "2.25.7"
+  resolved "https://registry.yarnpkg.com/@rive-app/canvas/-/canvas-2.25.7.tgz#2c38616e675d98e2217b5a2d5ef052f15d9f0b3a"
+  integrity sha512-cxC9MrjaYw6VBtZFyXHvwXukERSsdrQP9/48rQkaBysS3+WQbv5XQRzgxFsaj4sYWUgoZu57vHa27o6ktSrY7g==
 
 "@rollup/pluginutils@^5.1.4":
   version "5.1.4"

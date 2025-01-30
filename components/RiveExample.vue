@@ -67,8 +67,16 @@ onMounted(async () => {
 				alignment: Alignment.Center,
 			}),
 			autoplay: true,
-			stateMachines: 'State Machine 1',
+			stateMachines: ['State Machine 1'],
+			useOffscreenRenderer: true,
+			enableAudio: true,
 		})
+
+		// Log available state machines and artboards for debugging
+		riveInstance.on('load', () => {
+			console.log('Available state machines:', riveInstance)
+		})
+
 	} catch (error) {
 		console.error('Error loading Rive animation:', error)
 	}

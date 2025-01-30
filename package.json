@@ -1,17 +1,17 @@
 {
-  "name": "rive-101",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
-  },
-  "dependencies": {
-    "@rive-app/canvas": "1.1.9",
-    "@slidev/cli": "^51.0.2",
-    "@slidev/theme-default": "latest",
-    "@slidev/theme-seriph": "latest",
-    "vue": "^3.5.13"
-  }
+	"name": "rive-101",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"build": "slidev build",
+		"dev": "slidev --open",
+		"export": "slidev export"
+	},
+	"dependencies": {
+		"@rive-app/canvas": "2.25.7",
+		"@slidev/cli": "^51.0.2",
+		"@slidev/theme-default": "latest",
+		"@slidev/theme-seriph": "latest",
+		"vue": "^3.5.13"
+	}
 }
