@@ -1,11 +1,11 @@
 <template>
-	<div class="rive-container" :style="{ width, height }">
-		<canvas :id="canvasId" />
+	<div class="rive-container" :style="containerStyle">
+		<canvas :id="canvasId" :width="canvasWidth" :height="canvasHeight" />
 	</div>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 import { Rive, Layout, Fit, Alignment } from '@rive-app/canvas'
 
 const props = defineProps({
@@ -14,12 +14,12 @@ const props = defineProps({
 		required: true
 	},
 	width: {
-		type: String,
-		default: '400px'
+		type: [String, Number],
+		default: 400
 	},
 	height: {
-		type: String,
-		default: '300px'
+		type: [String, Number],
+		default: 300
 	},
 	fit: {
 		type: String,
@@ -31,21 +31,47 @@ const props = defineProps({
 	}
 })
 
+// Convert width/height to numbers and handle px values
+const getNumericSize = (size) => {
+	if (typeof size === 'number') return size
+	return parseInt(size.replace('px', ''))
+}
+
+const containerStyle = computed(() => ({
+	width: typeof props.width === 'number' ? `${props.width}px` : props.width,
+	height: typeof props.height === 'number' ? `${props.height}px` : props.height
+}))
+
+// Calculate actual canvas dimensions
+const dpr = window.devicePixelRatio || 1
+const canvasWidth = computed(() => getNumericSize(props.width) * dpr)
+const canvasHeight = computed(() => getNumericSize(props.height) * dpr)
+
 const canvasId = `rive-canvas-${Math.random().toString(36).substr(2, 9)}`
 let riveInstance = null
 
 onMounted(async () => {
 	const canvas = document.getElementById(canvasId)
+	const ctx = canvas.getContext('2d')
 
-	riveInstance = new Rive({
-		canvas,
-		src: props.src,
-		layout: new Layout({
-			fit: props.fit === 'contain' ? Fit.Contain : Fit.Cover,
-			alignment: Alignment.Center,
-		}),
-		autoplay: true,
-	})
+	// Set canvas CSS size
+	canvas.style.width = `${getNumericSize(props.width)}px`
+	canvas.style.height = `${getNumericSize(props.height)}px`
+
+	try {
+		riveInstance = new Rive({
+			canvas,
+			src: props.src,
+			layout: new Layout({
+				fit: props.fit === 'contain' ? Fit.Contain : Fit.Cover,
+				alignment: Alignment.Center,
+			}),
+			autoplay: true,
+			stateMachines: 'State Machine 1',
+		})
+	} catch (error) {
+		console.error('Error loading Rive animation:', error)
+	}
 })
 
 onUnmounted(() => {
@@ -58,14 +84,16 @@ onUnmounted(() => {
 <style scoped>
 .rive-container {
 	position: relative;
-	background: #1a1a1a;
+	background: transparent;
 	border-radius: 8px;
 	overflow: hidden;
 }
 
 canvas {
+	display: block;
 	width: 100%;
 	height: 100%;
+	touch-action: none; /* Prevents default touch behaviors */
 }
 
 .error-message {

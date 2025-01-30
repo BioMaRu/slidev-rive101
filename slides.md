@@ -49,6 +49,283 @@ For Developers & Designers
 </div>
 
 ---
+layout: center
+class: text-center
+---
+
+# Character Animation from Arcane
+## What Rive Can Do - Example 1
+
+<div class="example-showcase">
+  <RiveExample
+    src="/arcane.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Interactive Guitar Character
+## What Rive Can Do - Example 2
+
+<div class="example-showcase">
+  <RiveExample
+    src="/guitargirl.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Modern Website Elements
+## What Rive Can Do - Example 3
+
+<div class="example-showcase">
+  <RiveExample
+    src="/technology_website.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Advanced Data Visualization
+## What Rive Can Do - Example 4
+
+<div class="example-showcase">
+  <RiveExample
+    src="/advanced_tracker.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Reward System Animation
+## What Rive Can Do - Example 5
+
+<div class="example-showcase">
+  <RiveExample
+    src="/how-reward.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
+<style>
+.example-showcase {
+  @apply flex flex-col items-center p-8 rounded-lg border border-gray-400/20;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+kbd {
+  @apply px-2 py-1 text-sm rounded bg-gray-200 dark:bg-gray-800;
+}
+</style>
+
+---
+layout: center
+class: text-center
+---
+
+# Real-World Applications
+
+<div class="grid grid-cols-3 gap-6 mt-8">
+<div v-click class="app-card">
+  <carbon:application class="text-4xl mb-4" />
+  <h3>Web Apps</h3>
+  <ul class="text-sm mt-2 text-left">
+    <li>Loading states</li>
+    <li>Micro-interactions</li>
+    <li>Interactive forms</li>
+  </ul>
+</div>
+
+<div v-click class="app-card">
+  <carbon:game-console class="text-4xl mb-4" />
+  <h3>Games</h3>
+  <ul class="text-sm mt-2 text-left">
+    <li>Character animations</li>
+    <li>UI elements</li>
+    <li>Menu transitions</li>
+  </ul>
+</div>
+
+<div v-click class="app-card">
+  <carbon:mobile class="text-4xl mb-4" />
+  <h3>Mobile Apps</h3>
+  <ul class="text-sm mt-2 text-left">
+    <li>Onboarding flows</li>
+    <li>Animated icons</li>
+    <li>Navigation</li>
+  </ul>
+</div>
+</div>
+
+<style>
+.app-card {
+  @apply p-6 rounded-lg border border-gray-400/20 text-center;
+}
+.app-card ul {
+  @apply list-none;
+}
+</style>
+
+---
+layout: center
+---
+
+# The Evolution of Web Animation
+
+<div class="grid grid-cols-2 gap-8">
+<div v-click>
+
+### Flash Era (1996-2020)
+- Dominated web interactivity
+- Rich animation capabilities
+- Cross-browser compatibility
+- Designer-friendly tools
+- Interactive content creation
+- Widespread adoption
+
+</div>
+<div v-click>
+
+### The End of Flash
+- Performance issues
+- Security vulnerabilities
+- Mobile incompatibility
+- Closed ecosystem
+- Resource intensive
+- Deprecated by browsers
+
+</div>
+</div>
+
+<div class="mt-8 text-center text-sm opacity-75" v-click>
+Flash revolutionized web animation but couldn't adapt to modern web needs
+</div>
+
+---
+layout: center
+---
+
+# The Modern Solution: Rive
+
+<div class="grid grid-cols-2 gap-12 mt-8">
+<div v-click>
+
+### Core Advantages
+- Native performance
+- Security by design
+- Mobile-first approach
+- Open standards
+- Resource efficient
+- Cross-platform support
+
+</div>
+<div v-click>
+
+### Technical Improvements
+- Vector-based efficiency
+- State-driven interactions
+- Real-time rendering
+- Modern web standards
+- Developer-friendly APIs
+- Runtime optimization
+
+</div>
+</div>
+
+<div class="mt-8 text-center text-sm opacity-75" v-click>
+Built from the ground up for modern interactive experiences
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# From Flash to Rive
+
+<div class="grid grid-cols-3 gap-8 mt-8">
+<div v-click class="evolution-card">
+  <h3 class="text-red-500">Past</h3>
+  <div class="mt-4">
+    <carbon:flash class="text-4xl mb-4" />
+    <p class="text-sm opacity-75">Flash-based animations</p>
+    <ul class="text-sm mt-2 text-left">
+      <li>Plugin dependent</li>
+      <li>Limited mobile support</li>
+      <li>Security risks</li>
+    </ul>
+  </div>
+</div>
+
+<div v-click class="evolution-card">
+  <h3 class="text-yellow-500">Present</h3>
+  <div class="mt-4">
+    <carbon:development class="text-4xl mb-4" />
+    <p class="text-sm opacity-75">Modern web standards</p>
+    <ul class="text-sm mt-2 text-left">
+      <li>HTML5 Canvas</li>
+      <li>WebGL</li>
+      <li>SVG</li>
+    </ul>
+  </div>
+</div>
+
+<div v-click class="evolution-card">
+  <h3 class="text-green-500">Future</h3>
+  <div class="mt-4">
+    <img src="/rive.svg" class="w-16 h-16 mx-auto mb-4 filter dark:invert" />
+    <p class="text-sm opacity-75">Rive Platform</p>
+    <ul class="text-sm mt-2 text-left">
+      <li>High performance</li>
+      <li>Cross-platform</li>
+      <li>Interactive</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<style>
+.evolution-card {
+  @apply p-6 rounded-lg border border-gray-400/20 text-center;
+}
+.evolution-card ul {
+  @apply list-disc list-inside;
+}
+</style>
+
+---
 layout: image-right
 image: https://rive.app/static/img/features/state-machine.png
 ---
