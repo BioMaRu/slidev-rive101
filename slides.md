@@ -699,3 +699,24 @@ layout: center
 <div class="mt-4 text-sm opacity-75" v-click>
 Source: <a href="https://help.rive.app/editor/state-machine" target="_blank" class="text-blue-500">Rive State Machine Documentation</a>
 </div>
+
+---
+layout: end
+class: text-center
+---
+
+# Rive: The Future of Interactive Animation
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+</style>
