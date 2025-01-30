@@ -1,57 +1,71 @@
 <template>
-	<div>
-		<canvas ref="canvas" :width="width" :height="height"></canvas>
+	<div class="rive-container" :style="{ width, height }">
+		<canvas :id="canvasId" />
 	</div>
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
-import { Rive, Layout } from "@rive-app/canvas";
+import { onMounted, onUnmounted } from 'vue'
+import { Rive, Layout, Fit, Alignment } from '@rive-app/canvas'
 
 const props = defineProps({
 	src: {
 		type: String,
-		required: true,
+		required: true
 	},
 	width: {
 		type: String,
-		default: "400",
+		default: '400px'
 	},
 	height: {
 		type: String,
-		default: "400",
+		default: '300px'
 	},
 	fit: {
 		type: String,
-		default: "contain",
+		default: 'contain'
 	},
 	alignment: {
 		type: String,
-		default: "center",
-	},
-});
+		default: 'center'
+	}
+})
 
-const canvas = ref(null);
+const canvasId = `rive-canvas-${Math.random().toString(36).substr(2, 9)}`
+let riveInstance = null
 
-onMounted(() => {
-	new Rive({
-		canvas: canvas.value,
+onMounted(async () => {
+	const canvas = document.getElementById(canvasId)
+
+	riveInstance = new Rive({
+		canvas,
 		src: props.src,
 		layout: new Layout({
-			fit: props.fit,
-			alignment: props.alignment,
+			fit: props.fit === 'contain' ? Fit.Contain : Fit.Cover,
+			alignment: Alignment.Center,
 		}),
 		autoplay: true,
-	});
-});
+	})
+})
+
+onUnmounted(() => {
+	if (riveInstance) {
+		riveInstance.cleanup()
+	}
+})
 </script>
 
 <style scoped>
 .rive-container {
 	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background: #1a1a1a;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+canvas {
+	width: 100%;
+	height: 100%;
 }
 
 .error-message {
