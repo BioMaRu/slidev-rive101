@@ -56,9 +56,13 @@ layout: center
 class: text-center
 ---
 
+<div class="flex justify-center items-center mb-8">
+  <img src="/images/flash-logo.png" class="w-24 h-24" alt="Flash Logo">
+</div>
+
 # The Evolution of Web Animation
 
-<div class="grid grid-cols-3 gap-8">
+<div class="grid grid-cols-2 gap-8">
 <div v-click>
 
 ### Flash Era
@@ -68,30 +72,49 @@ class: text-center
 - Designer-friendly tools
 - Interactive content creation
 - Widespread adoption
+- Industry standard for years
+- Powerful animation tools
 
 </div>
 <div v-click>
 
-### HTML5 Era
-- Canvas & SVG animations
-- CSS animations/transitions
-- Web Animations API
-- JavaScript libraries
-- WebGL capabilities
-- Open web standards
-
-</div>
-<div v-click>
-
-### The End of Flash
-- Performance issues
-- Security vulnerabilities
+### The End of Flash & Rise of HTML5
+- Performance & security issues
 - Mobile incompatibility
 - Closed ecosystem
 - Resource intensive
 - Deprecated by browsers
+- Replaced by open standards (HTML5 Era)
 
 </div>
+</div>
+
+
+---
+layout: center
+class: text-center
+---
+
+<div class="w-full">
+  <img src="/images/flash-example3.png" class="w-4/5 mx-auto" alt="Flash Website Example - Higher Source">
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+<div class="w-full">
+  <img src="/images/flash-example2.png" class="w-4/5 mx-auto" alt="Flash Content Example - K10k">
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+<div class="w-full">
+  <img src="/images/flash-example1.png" class="w-4/5 mx-auto" alt="Flash Games and Applications">
 </div>
 
 ---
@@ -143,39 +166,6 @@ class: text-center
   />
 </div>
 
----
-layout: center
-class: text-center
----
-
-# Character Animation from Arcane
-
-<div class="example-showcase">
-  <RiveExample
-    src="/arcane.riv"
-    :width="600"
-    :height="400"
-    fit="contain"
-    alignment="center"
-  />
-</div>
-
----
-layout: center
-class: text-center
----
-
-# Interactive Guitar Character
-
-<div class="example-showcase">
-  <RiveExample
-    src="/guitargirl.riv"
-    :width="600"
-    :height="400"
-    fit="contain"
-    alignment="center"
-  />
-</div>
 
 ---
 layout: center
@@ -210,6 +200,43 @@ class: text-center
     alignment="center"
   />
 </div>
+
+
+---
+layout: center
+class: text-center
+---
+
+# Interactive Guitar Character
+
+<div class="example-showcase">
+  <RiveExample
+    src="/guitargirl.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
+
+---
+layout: center
+class: text-center
+---
+
+# Character Animation from Arcane
+
+<div class="example-showcase">
+  <RiveExample
+    src="/arcane.riv"
+    :width="600"
+    :height="400"
+    fit="contain"
+    alignment="center"
+  />
+</div>
+
 
 ---
 layout: center
@@ -257,6 +284,31 @@ layout: center
 While Lottie is great for simple animations, Rive offers a complete platform for interactive content
 </div>
 
+
+---
+layout: center
+class: text-center
+---
+
+# Lottie Creator App
+
+<div class="w-full">
+  <img src="/lottie-creator.png" class="w-6/12 mx-auto" alt="Lottie Creator Application">
+</div>
+
+---
+layout: center
+class: text-center
+---
+
+# Rive App
+
+### Can import Lottie
+
+<div class="w-full">
+  <img src="/lottie-rive-import.png" class="w-4/5 mx-auto" alt="Lottie vs Rive Import Comparison">
+</div>
+
 ---
 layout: center
 ---
@@ -294,11 +346,33 @@ layout: center
 While Lottie plays back animations like a video player, Rive runs them in real-time like a game engine
 </div>
 
+
 ---
 layout: center
 ---
 
-# Real World Use Cases
+# Lottie Player Cross-Platform Inconsistencies
+
+<div class="grid grid-cols-2 gap-4">
+<div>
+  <img src="/images/lottie-compare.png" class="w-full" alt="Lottie inconsistencies across platforms">
+</div>
+<div class="text-left">
+
+Lottie runtime
+- Different rendering results across platforms
+- Inconsistent animation timing
+- Platform-specific bugs and limitations
+- Web vs Native implementations vary
+
+</div>
+</div>
+
+---
+layout: center
+---
+
+# Rive Real World Use Cases
 
 <div class="grid grid-cols-2 gap-12 mt-8">
 <div v-click>
@@ -330,6 +404,53 @@ layout: center
 From UI components to complex interactive experiences, Rive powers modern digital interfaces
 </div>
 
+
+---
+layout: default
+---
+
+# Rive Implementation Examples
+
+<div class="grid grid-cols-2 gap-4">
+
+```js {all|2-8|all}
+// Web Implementation
+const r = new rive.Rive({
+    src: "https://cdn.rive.app/animations/vehicles.riv",
+    canvas: document.getElementById("canvas"),
+    autoplay: true,
+    stateMachines: "bumpy",
+    onLoad: () => {
+        r.resizeDrawingSurfaceToCanvas();
+    },
+});
+```
+
+```dart {all|1-2|4-13|all}
+// Flutter Integration
+import 'package:rive/rive.dart';
+
+class MyRiveAnimation extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Center(
+        child: RiveAnimation.network(
+          'https://cdn.rive.app/animations/vehicles.riv',
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}
+```
+
+</div>
+
+<div class="mt-4 text-sm opacity-75" v-click>
+Source: <a href="https://rive.app/community/doc/web-js/docvlgbnS1mp" target="_blank" class="text-blue-500">Rive Web Documentation</a>
+</div>
+
 <style>
 .example-showcase {
   @apply flex flex-col items-center p-8 rounded-lg border border-gray-400/20;
@@ -339,5 +460,10 @@ From UI components to complex interactive experiences, Rive powers modern digita
 
 kbd {
   @apply px-2 py-1 text-sm rounded bg-gray-200 dark:bg-gray-800;
+}
+
+.slidev-layout {
+  background: #ffffff;
+  color: #121212;
 }
 </style>
