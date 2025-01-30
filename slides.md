@@ -313,37 +313,46 @@ class: text-center
 layout: center
 ---
 
-# Runtime Support
+# Rive Runtime Support
 
-<div class="grid grid-cols-2 gap-12 mt-8">
+<div class="grid grid-cols-3 gap-8 mt-8">
 <div v-click>
 
-### Lottie Runtime
-- Plays pre-rendered animations
-- Like playing a video file
-- Limited to playback controls
-  - Play/Pause
-  - Speed control
-  - Frame by frame
-- Static content once exported
+### Web
+- JavaScript/TypeScript
+- React
+- Vue
+- Angular
+- WebGL/Canvas
+- Web Components
 
 </div>
 <div v-click>
 
-### Rive Runtime
-- Real-time animation engine
-- Like a game engine
-- Rich interactive controls
-  - State machines
-  - Dynamic mixing
-  - Live parameters
-- Content remains dynamic
+### Mobile
+- iOS Native
+- Android Native
+- React Native
+- Flutter
+- Cross-platform APIs
+- Mobile Optimization
+
+</div>
+<div v-click>
+
+### Game Engines
+- Unity
+- Bevy
+- GameKit
+- Custom Renderers
+- State Machine Integration
+- Asset Management
 
 </div>
 </div>
 
-<div class="mt-8 text-sm opacity-75" v-click>
-While Lottie plays back animations like a video player, Rive runs them in real-time like a game engine
+<div class="mt-4 text-sm opacity-75" v-click>
+Source: <a href="https://help.rive.app/runtimes/overview" target="_blank" class="text-blue-500">Rive Runtimes Documentation</a>
 </div>
 
 
@@ -609,8 +618,6 @@ layout: center
 - Built-in state machines
 - Visual interaction design
 - Cross-platform export
-- Single source of truth
-- Live collaboration
 
 </div>
 </div>
@@ -637,3 +644,58 @@ layout: center
 </div>
 </div>
 
+---
+layout: center
+class: text-center
+---
+
+# Interactive Rating Animation
+
+<div class="w-full flex justify-center">
+  <video
+    src="/rating-star.mp4"
+    class="w-3/4 mx-auto rounded-lg shadow-lg"
+    autoplay
+    loop
+    muted
+    playsinline
+  ></video>
+</div>
+
+<div class="text-sm opacity-75 mt-4" v-click>
+Smooth, interactive rating component built with Rive's state machine system
+</div>
+
+---
+layout: center
+---
+
+# Rive State Machine Power
+
+<div class="grid grid-cols-2 gap-12 mt-8">
+<div v-click>
+
+### Core Features
+- Visual State Management
+- Multiple Animation Mixing
+- Input Triggers & Listeners
+- Layered Animations
+- Transition Controls
+- Event System
+
+</div>
+<div v-click>
+
+### State Machine Types
+- Simple Playback
+- Interactive Animations
+- Game Logic
+- Character Controllers
+- Multi-state Transitions
+
+</div>
+</div>
+
+<div class="mt-4 text-sm opacity-75" v-click>
+Source: <a href="https://help.rive.app/editor/state-machine" target="_blank" class="text-blue-500">Rive State Machine Documentation</a>
+</div>
