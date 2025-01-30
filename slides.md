@@ -368,42 +368,6 @@ Lottie runtime
 </div>
 </div>
 
----
-layout: center
----
-
-# Rive Real World Use Cases
-
-<div class="grid grid-cols-2 gap-12 mt-8">
-<div v-click>
-
-### Dynamic Graphics
-- Loading animations
-- Micro-interactions
-- Form feedback
-- Menu transitions
-- Component libraries
-- Icon sets
-
-</div>
-<div v-click>
-
-### Interactive Media
-- Game characters
-- Educational content
-- Product showcases
-- Marketing assets
-- TV program interfaces
-- Interactive menus
-- Streaming app UIs
-
-</div>
-</div>
-
-<div class="mt-8 text-sm opacity-75" v-click>
-From UI components to complex interactive experiences, Rive powers modern digital interfaces
-</div>
-
 
 ---
 layout: default
@@ -468,6 +432,98 @@ kbd {
 }
 </style>
 
+
+---
+layout: default
+---
+
+# Rive Event Handling & State Management
+
+<div class="grid grid-cols-2 gap-4">
+
+```js {all|2-3|5-8|10-14|all}
+// Event Listeners
+const riveInstance = new rive.Rive({
+    stateMachines: 'state_machine_1'
+
+    // Listen to state changes
+    onStateChange: (event) => {
+        console.log('State changed:', event.data);
+    },
+});
+
+// Update state machine inputs
+riveInstance.setNumberState('state_machine_1', 'level', 5);
+riveInstance.setBooleanState('state_machine_1', 'isHovered', true);
+riveInstance.fireState('state_machine_1', 'trigger');
+riveInstance.setTextState('state_machine_1', 'message', 'Hello!');
+```
+
+```js {all|2-12|14-19|all}
+// Common Events
+riveInstance.on('play', () => {
+    console.log('Animation started');
+});
+
+riveInstance.on('pause', () => {
+    console.log('Animation paused');
+});
+
+riveInstance.on('loop', () => {
+    console.log('Animation looped');
+});
+
+// State Machine Inputs
+const inputs = riveInstance
+    .stateMachineInputs('state_machine_1');
+
+// Get specific input
+const levelInput = inputs.find(i => i.name === 'level');
+```
+
+</div>
+
+<div class="mt-4 text-sm opacity-75" v-click>
+Rive provides a rich event system and state management capabilities for interactive animations
+</div>
+
+---
+layout: center
+---
+
+# Rive Real World Use Cases
+
+<div class="grid grid-cols-2 gap-12 mt-8">
+<div v-click>
+
+### Dynamic Graphics
+- Loading animations
+- Micro-interactions
+- Form feedback
+- Menu transitions
+- Component libraries
+- Icon sets
+
+</div>
+<div v-click>
+
+### Interactive Media
+- Game characters
+- Educational content
+- Product showcases
+- Marketing assets
+- TV program interfaces
+- Interactive menus
+- Streaming app UIs
+
+</div>
+</div>
+
+<div class="mt-8 text-sm opacity-75" v-click>
+From UI components to complex interactive experiences, Rive powers modern digital interfaces
+</div>
+
+
 ---
 layout: center
 class: text-center
@@ -527,3 +583,57 @@ class: text-center
 <div class="text-sm opacity-75 mt-4" v-click>
 Smart interactions with AI-powered chat interfaces and dynamic animations
 </div>
+
+---
+layout: center
+---
+
+# How Rive Empowers Designers
+
+<div class="grid grid-cols-2 gap-12 mt-8">
+<div v-click>
+
+### Design Freedom
+- Familiar design tools
+- Real-time preview
+- Vector-based workflow
+- Responsive layouts
+- Asset optimization
+- Direct state control
+
+</div>
+<div v-click>
+
+### Designer → Developer
+- No code required
+- Built-in state machines
+- Visual interaction design
+- Cross-platform export
+- Single source of truth
+- Live collaboration
+
+</div>
+</div>
+
+<div class="mt-8 grid grid-cols-2 gap-8">
+<div v-click>
+
+```js
+// No coding required for basic interactions
+<RiveComponent
+  src="animation.riv"
+  stateMachines="designer_states"
+  autoplay={true}
+/>
+```
+
+</div>
+<div v-click class="text-sm opacity-75 mt-4">
+
+"Rive removes the need for hard-coded graphics, empowering teams to iterate faster and build better products."
+
+[Source: Rive Documentation](https://rive.app)
+
+</div>
+</div>
+
